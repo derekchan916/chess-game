@@ -9,7 +9,7 @@ class Board
   attr_accessor :graveyard
 
   def initialize
-    @grid = Array.new(BOARD_SIZE) {Array.new(BOARD_SIZE)}
+    @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) }
     populate_grid(:w)
     populate_grid(:b)
     @graveyard = []

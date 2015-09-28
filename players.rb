@@ -6,6 +6,7 @@ class HumanPlayer
   end
 
   def play_turn
+    puts "Current player: #{color}"
     puts "Enter starting input #{color}"
     start_input = get_input
     puts "Enter destination input #{color}"

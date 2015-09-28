@@ -6,7 +6,7 @@ class Game
 
   def initialize
     @board = Board.new
-    @white = ComputerPlayer.new(:w, @board)
+    @white = HumanPlayer.new(:w, @board)
     @black = ComputerPlayer.new(:b, @board)
     @current_player = @black
   end
@@ -22,14 +22,14 @@ class Game
     end
 
     board.render
-    puts "Congratulations #{current_player.color}!!!!!!!"
+    puts "Congratulations #{current_player.color}!!"
   end
 
   private
   def move_piece
     begin
       start_input, end_input = current_player.play_turn
-      p [start_input, end_input]
+      # p [start_input, end_input]
       board.move(start_input, end_input, current_player.color)
     rescue MissingPieceError => e
       puts e.message
