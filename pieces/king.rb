@@ -8,6 +8,13 @@ class King < SteppingPiece
   end
 
   def move_dirs
-    KING_DELTA
+    [[-1, -1],
+     [-1,  0],
+     [-1,  1],
+     [ 0, -1],
+     [ 0,  1],
+     [ 1, -1],
+     [ 1,  0],
+     [ 1,  1]]
   end
 end

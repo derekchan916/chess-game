@@ -47,7 +47,7 @@ class Game
   end
 
   def switch_player
-    (@current_player == white) ? (@current_player = black) : (@current_player = white)
+    @current_player = (@current_player == white) ? black : white
   end
 
   def over?
