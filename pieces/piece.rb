@@ -1,5 +1,3 @@
-require "byebug"
-
 class Piece
   PIECE_IMAGES = {
     "Bishop" => ["\u2657", "\u265D"],
@@ -41,7 +39,7 @@ class Piece
   end
 
   def to_s
-    idx = (color == :w ? 0 : 1)
+    idx = (color == :white ? 0 : 1)
     checkmark = PIECE_IMAGES[self.class.to_s][idx].encode('utf-8')
   end
 

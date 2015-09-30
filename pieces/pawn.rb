@@ -20,7 +20,7 @@ class Pawn < Piece
   end
 
   def move_dirs
-    color == :w ? PAWN_MOVES_WHITE : PAWN_MOVES_BLACK
+    color == :white ? PAWN_MOVES_WHITE : PAWN_MOVES_BLACK
   end
 
   def moves

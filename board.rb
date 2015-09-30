@@ -1,5 +1,5 @@
 require_relative 'pieces.rb'
-require_relative 'pawn.rb'
+require_relative 'players.rb'
 require 'colorize'
 
 class Board
@@ -10,8 +10,8 @@ class Board
 
   def initialize
     @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) }
-    populate_grid(:w)
-    populate_grid(:b)
+    populate_grid(:white)
+    populate_grid(:black)
     @graveyard = []
   end
 
@@ -38,8 +38,8 @@ class Board
     end
     print "\n\n"
 
-    w = graveyard.select{|piece| piece.color == :b}
-    b = graveyard.select{|piece| piece.color == :w}
+    w = graveyard.select{|piece| piece.color == :black}
+    b = graveyard.select{|piece| piece.color == :white}
     puts "white: #{w.each(&:to_s)}"
     puts "black: #{b.each(&:to_s)}"
   end
@@ -100,7 +100,7 @@ class Board
 
   private
   def populate_grid(color)
-    if color == :b
+    if color == :black
       rows = [1, 0]
     else
       rows = [6, 7]
@@ -128,7 +128,7 @@ class Board
   end
 
   def switch_color(color)
-    color == :w ? :b : :w
+    color == :white ? :black : :white
   end
 
   def check_for_errors(current_piece, end_pos, color)

@@ -7,9 +7,9 @@ class HumanPlayer
 
   def play_turn
     puts "Current player: #{color}"
-    puts "Enter starting input #{color}"
+    puts "Choose a piece (ex. 3,5)"
     start_input = get_input
-    puts "Enter destination input #{color}"
+    puts "Where do you want to move this piece? (ex. 4,5)"
     end_input = get_input
 
     [start_input, end_input]
@@ -17,7 +17,7 @@ class HumanPlayer
 
   def get_input
     begin
-      puts "Which piece do you want to move? (format: x,y)"
+
       input = gets.chomp.split(",")
       raise InvalidInputError.new ("L2R yo") unless valid?(input)
     rescue InvalidInputError => e

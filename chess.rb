@@ -1,4 +1,4 @@
-require_relative 'requires.rb'
+require_relative 'board.rb'
 require "byebug"
 
 class Game
@@ -6,8 +6,8 @@ class Game
 
   def initialize
     @board = Board.new
-    @white = HumanPlayer.new(:w, @board)
-    @black = ComputerPlayer.new(:b, @board)
+    @white = ComputerPlayer.new(:white, @board)
+    @black = ComputerPlayer.new(:black, @board)
     @current_player = @black
   end
 
